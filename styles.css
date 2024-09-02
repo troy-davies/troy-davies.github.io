@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.fzqaPeZuXdjtPOf-vwvuJAHaE8%26pid%3DApi&f=1&ipt=6d0789eb4af85582677c2f24664be57970856f728c72fb859c04a9ce71d3369c&ipo=images'); /* Update with your image URL */
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8)), url('https://images.pexels.com/photos/11873331/pexels-photo-11873331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Update with your image URL */
     background-size: cover; /* Ensures the image covers the entire background */
     background-position: center; /* Centers the image */
     height: 100vh; /* Ensure the gradient covers the full height */
