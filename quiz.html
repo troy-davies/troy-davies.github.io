@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Live Life</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Self Improvement Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="fitness.html">Fitness</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="attention.html">Attention</a></li>
+                <li><a href="money.html">Money</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="quiz">
+            <h2>Test Your Knowledge</h2>
+            <form id="quizForm">
+                <div>
+                    <label>1. What is a common benefit of meditation?</label><br>
+                    <input type="radio" name="q1" value="a"> a) Increased stress<br>
+                    <input type="radio" name="q1" value="b"> b) Improved focus<br>
+                    <input type="radio" name="q1" value="c"> c) Decreased productivity<br>
+                </div>
+                <div>
+                    <label>2. Which of the following is a key component of fitness?</label><br>
+                    <input type="radio" name="q2" value="a"> a) Flexibility<br>
+                    <input type="radio" name="q2" value="b"> b) Ignoring nutrition<br>
+                    <input type="radio" name="q2" value="c"> c) Sedentary lifestyle<br>
+                </div>
+                <div>
+                    <label>3. What is a good way to improve attention span?</label><br>
+                    <input type="radio" name="q3" value="a"> a) Multitasking<br>
+                    <input type="radio" name="q3" value="b"> b) Regular breaks<br>
+                    <input type="radio" name="q3" value="c"> c) Constant distractions<br>
+                </div>
+                <div>
+                    <label>4. Which of the following is important for financial growth?</label><br>
+                    <input type="radio" name="q4" value="a"> a) Saving money<br>
+                    <input type="radio" name="q4" value="b"> b) Spending recklessly<br>
+                    <input type="radio" name="q4" value="c"> c) Ignoring investments<br>
+                </div>
+                <div>
+                    <label>5. What is a common practice for self-improvement?</label><br>
+                    <input type="radio" name="q5" value="a"> a) Setting goals<br>
+                    <input type="radio" name="q5" value="b"> b) Avoiding challenges<br>
+                    <input type="radio" name="q5" value="c"> c) Procrastination<br>
+                </div>
+                <button type="button" onclick="submitQuiz()">Submit</button>
+            </form>
+            <div id="result"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Live Life. All rights reserved.</p>
+        <p><a href="LICENSE">MIT License</a></p>
+    </footer>
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'b',
+                q4: 'a',
+                q5: 'a'
+            };
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            for (let question in answers) {
+                const userAnswer = form[question].value;
+                if (userAnswer === answers[question]) {
+                    score++;
+                }
+            }
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `You scored ${score} out of ${Object.keys(answers).length}.`;
+        }
+    </script>
+</body>
+</html>
