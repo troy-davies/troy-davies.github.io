@@ -1,8 +1,14 @@
 let score = 0;
 let totalQuestions = 5;
 let currentQuestion = 0;
+let answeredQuestions = {}; // Track answered questions
 
 function checkAnswer(question, answer, element) {
+    // Check if the question has already been answered
+    if (answeredQuestions[question]) {
+        return; // If answered, do nothing
+    }
+
     const feedbackElement = document.getElementById(`feedback-${question}`);
     feedbackElement.style.display = 'block'; // Show feedback
 
@@ -23,6 +29,9 @@ function checkAnswer(question, answer, element) {
         feedbackElement.textContent = "Incorrect. Try again!";
         feedbackElement.className = 'feedback incorrect';
     }
+
+    // Mark the question as answered
+    answeredQuestions[question] = true;
 
     // Update progress bar
     currentQuestion++;
