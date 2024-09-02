@@ -1,15 +1,17 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Courier New', Courier, monospace; /* Classic font */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e0e0e0; /* Light gray background */
+    color: #333; /* Dark text color */
 }
 
 header {
-    background: #333;
+    background: #8b8b8b; /* Dark gray header */
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    border-bottom: 2px solid #000; /* Solid border */
 }
 
 nav ul {
@@ -25,6 +27,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 main {
@@ -33,9 +36,10 @@ main {
 
 #quiz {
     background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #000; /* Solid border for the quiz section */
+    border-radius: 0; /* No rounded corners */
     padding: 20px;
+    box-shadow: none; /* No shadow */
 }
 
 table {
@@ -46,25 +50,26 @@ table {
 
 th, td {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #000; /* Solid border for table cells */
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #d3d3d3; /* Light gray for header */
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green button */
     color: white;
     padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #000; /* Solid border */
+    border-radius: 0; /* No rounded corners */
     cursor: pointer;
+    font-family: 'Courier New', Courier, monospace; /* Classic font */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green on hover */
 }
 
 #result {
