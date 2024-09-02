@@ -2,22 +2,18 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8)), url('https://images.pexels.com/photos/11873331/pexels-photo-11873331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Update with your image URL */
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the image */
-    height: 100vh; /* Ensure the gradient covers the full height */
+    background-color: #f4f4f4;
 }
 
 header {
-    background: rgba(74, 144, 226, 0.9); /* Slightly transparent header */
-    color: white;
-    padding: 20px;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
     text-align: center;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -27,7 +23,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -35,20 +31,43 @@ main {
     padding: 20px;
 }
 
-section {
-    margin: 20px 0;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for sections */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+#quiz {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background: rgba(74, 144, 226, 0.9); /* Slightly transparent footer */
-    color: white;
-    position: relative;
-    bottom: 0;
+table {
     width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
 }
