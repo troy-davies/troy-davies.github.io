@@ -59,6 +59,12 @@ th {
     background-color: #d3d3d3; /* Light gray for header */
 }
 
+input[type="radio"] {
+    width: 20px; /* Increase width */
+    height: 20px; /* Increase height */
+    margin-right: 10px; /* Space between checkbox and label */
+}
+
 button {
     background-color: #4CAF50; /* Green button */
     color: white;
