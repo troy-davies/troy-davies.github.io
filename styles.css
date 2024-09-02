@@ -3,12 +3,14 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.8)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.fzqaPeZuXdjtPOf-vwvuJAHaE8%26pid%3DApi&f=1&ipt=6d0789eb4af85582677c2f24664be57970856f728c72fb859c04a9ce71d3369c&ipo=images'); /* Update with your image URL */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
     height: 100vh; /* Ensure the gradient covers the full height */
 }
 
 header {
-    background: #4a90e2;
+    background: rgba(74, 144, 226, 0.9); /* Slightly transparent header */
     color: white;
     padding: 20px;
     text-align: center;
@@ -36,7 +38,7 @@ main {
 section {
     margin: 20px 0;
     padding: 15px;
-    background: white;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for sections */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +46,7 @@ section {
 footer {
     text-align: center;
     padding: 10px;
-    background: #4a90e2;
+    background: rgba(74, 144, 226, 0.9); /* Slightly transparent footer */
     color: white;
     position: relative;
     bottom: 0;
