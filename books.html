@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Self-Help and Self-Improvement</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Books</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="tips.html">Self-Improvement Tips</a></li>
+                <li><a href="exercise.html">Exercise</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="books">
+            <h2>Featured Books</h2>
+            <div class="book-card" onclick="bookClicked('Atomic Habits')">
+                <h3>Atomic Habits</h3>
+                <p><strong>Author:</strong> James Clear</p>
+                <p>A guide to building good habits and breaking bad ones.</p>
+            </div>
+            <div class="book-card" onclick="bookClicked('Psycho-Cybernetics')">
+                <h3>Psycho-Cybernetics</h3>
+                <p><strong>Author:</strong> Maxwell Maltz</p>
+                <p>A self-image and personal development classic.</p>
+            </div>
+            <div class="book-card" onclick="bookClicked('The Power of Now')">
+                <h3>The Power of Now</h3>
+                <p><strong>Author:</strong> Eckhart Tolle</p>
+                <p>A guide to spiritual enlightenment and living in the present moment.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy 2023 Self-Help and Self-Improvement</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
