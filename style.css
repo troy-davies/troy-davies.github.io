@@ -2,11 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f4f8; /* Light background color */
+    color: #333; /* Dark text color for readability */
 }
 
 header {
-    background: #007BFF;
+    background: linear-gradient(135deg, #007BFF, #00BFFF); /* Gradient background */
     color: white;
     text-align: center;
     padding: 20px;
@@ -25,32 +26,50 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Gold color on hover */
 }
 
 main {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .intro, .books, .tips, .exercise {
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px; /* Limit width for better readability */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;
+}
+
+h2 {
+    color: #007BFF; /* Primary color for headings */
+    border-bottom: 2px solid #00BFFF; /* Underline effect */
+    padding-bottom: 10px;
 }
 
 .book-card {
-    background: white;
+    background: #f9f9f9; /* Light card background */
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 20px;
     cursor: pointer;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s; /* Smooth transition */
 }
 
 .book-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-    color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 ul {
@@ -60,10 +79,11 @@ ul {
 
 footer {
     text-align: center;
-    padding: 10px;
-    background: #007BFF;
+    padding: 15px;
+    background: #007BFF; /* Consistent footer color */
     color: white;
     position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: 20px; /* Space above footer */
 }
