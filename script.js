@@ -1,38 +1,57 @@
-const answers = {
-    q1: 'b',
-    q2: 'a',
-    q3: 'b',
-    q4: 'a',
-    q5: 'a'
-};
+let score = 0;
+let totalQuestions = 5;
+let currentQuestion = 0;
 
-function checkAnswer(question, selectedAnswer, radio) {
-    const feedbackDiv = document.getElementById(`feedback-${question}`);
-    feedbackDiv.style.display = 'block';
-    feedbackDiv.style.opacity = '0'; // Reset opacity for animation
+function checkAnswer(question, answer, element) {
+    const feedbackElement = document.getElementById(`feedback-${question}`);
+    feedbackElement.style.display = 'block'; // Show feedback
 
-    if (selectedAnswer === answers[question]) {
-        feedbackDiv.textContent = "Correct!";
-        feedbackDiv.className = "feedback correct";
+    // Correct answers
+    const correctAnswers = {
+        q1: 'b',
+        q2: 'a',
+        q3: 'b',
+        q4: 'b',
+        q5: 'e'
+    };
+
+    if (answer === correctAnswers[question]) {
+        feedbackElement.textContent = "Correct!";
+        feedbackElement.className = 'feedback correct';
+        score++;
     } else {
-        feedbackDiv.textContent = "Incorrect!";
-        feedbackDiv.className = "feedback incorrect";
+        feedbackElement.textContent = "Incorrect. Try again!";
+        feedbackElement.className = 'feedback incorrect';
     }
 
-    // Trigger animation
+    // Update progress bar
+    currentQuestion++;
+    updateProgress();
+
+    // Animate feedback
+    feedbackElement.style.opacity = '1';
+    feedbackElement.style.transform = 'translateY(0)';
+
+    // Reset the feedback after a few seconds
     setTimeout(() => {
-        feedbackDiv.style.opacity = '1'; // Fade in
-    }, 10);
+        feedbackElement.style.opacity = '0'; // Fade out
+        feedbackElement.style.transform = 'translateY(-10px)'; // Move up
+        setTimeout(() => {
+            feedbackElement.style.display = 'none'; // Hide after fade out
+            feedbackElement.className = 'feedback'; // Reset class
+        }, 500); // Wait for the fade out to complete
+    }, 2000);
+
+    // Show final score if all questions are answered
+    if (currentQuestion === totalQuestions) {
+        setTimeout(() => {
+            alert(`Quiz completed! Your score: ${score} out of ${totalQuestions}`);
+        }, 2500);
+    }
 }
 
-function submitQuiz() {
-    let score = 0;
-    for (let question in answers) {
-        const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
-        if (userAnswer && userAnswer.value === answers[question]) {
-            score++;
-        }
-    }
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `You scored ${score} out of ${Object.keys(answers).length}.`;
+function updateProgress() {
+    const progressBar = document.getElementById('progress');
+    const percentage = (currentQuestion / totalQuestions) * 100;
+    progressBar.style.width = percentage + '%';
 }
