@@ -1,88 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - Live Life</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Self Improvement Quiz</h1>
-        <nav>
-            <ul>
-                <li><a href="fitness.html">Fitness</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="attention.html">Attention</a></li>
-                <li><a href="money.html">Money</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="quiz">
-            <h2>Test Your Knowledge</h2>
-            <form id="quizForm">
-                <table>
-                    <tr>
-                        <th>Question</th>
-                        <th>Options</th>
-                    </tr>
-                    <tr>
-                        <td>1. What is a common benefit of meditation?</td>
-                        <td>
-                            <input type="radio" name="q1" value="a" onclick="checkAnswer('q1', 'a', this)"> a) Increased stress<br>
-                            <input type="radio" name="q1" value="b" onclick="checkAnswer('q1', 'b', this)"> b) Improved focus<br>
-                            <input type="radio" name="q1" value="c" onclick="checkAnswer('q1', 'c', this)"> c) Decreased productivity<br>
-                            <div class="feedback" id="feedback-q1"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2. Which of the following is a key component of fitness?</td>
-                        <td>
-                            <input type="radio" name="q2" value="a" onclick="checkAnswer('q2', 'a', this)"> a) Flexibility<br>
-                            <input type="radio" name="q2" value="b" onclick="checkAnswer('q2', 'b', this)"> b) Ignoring nutrition<br>
-                            <input type="radio" name="q2" value="c" onclick="checkAnswer('q2', 'c', this)"> c) Sedentary lifestyle<br>
-                            <div class="feedback" id="feedback-q2"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3. What is a good way to improve attention span?</td>
-                        <td>
-                            <input type="radio" name="q3" value="a" onclick="checkAnswer('q3', 'a', this)"> a) Multitasking<br>
-                            <input type="radio" name="q3" value="b" onclick="checkAnswer('q3', 'b', this)"> b) Regular breaks<br>
-                            <input type="radio" name="q3" value="c" onclick="checkAnswer('q3', 'c', this)"> c) Constant distractions<br>
-                            <div class="feedback" id="feedback-q3"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4. Which of the following is important for financial growth?</td>
-                        <td>
-                            <input type="radio" name="q4" value="a" onclick="checkAnswer('q4', 'a', this)"> a) Saving money<br>
-                            <input type="radio" name="q4" value="b" onclick="checkAnswer('q4', 'b', this)"> b) Spending recklessly<br>
-                            <input type="radio" name="q4" value="c" onclick="checkAnswer('q4', 'c', this)"> c) Ignoring investments<br>
-                            <div class="feedback" id="feedback-q4"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5. What is a common practice for self-improvement?</td>
-                        <td>
-                            <input type="radio" name="q5" value="a" onclick="checkAnswer('q5', 'a', this)"> a) Setting goals<br>
-                            <input type="radio" name="q5" value="b" onclick="checkAnswer('q5', 'b', this)"> b) Avoiding challenges<br>
-                            <input type="radio" name="q5" value="c" onclick="checkAnswer('q5', 'c', this)"> c) Procrastination<br>
-                            <div class="feedback" id="feedback-q5"></div>
-                        </td>
-                    </tr>
-                </table>
-                <button type="button" onclick="submitQuiz()">Submit Final Score</button>
-            </form>
-            <div id="result"></div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Live Life. All rights reserved.</p>
-        <p><a href="LICENSE">MIT License</a></p>
-    </footer>
-    <script src="script.js"></script> <!-- Link to the new JavaScript file -->
-</body>
-</html>
+<tr>
+    <td>1. What is a common benefit of meditation?</td>
+    <td>
+        <input type="radio" name="q1" value="a" onclick="checkAnswer('q1', 'a', this)"> a) Increased stress<br>
+        <input type="radio" name="q1" value="b" onclick="checkAnswer('q1', 'b', this)"> b) Improved focus<br>
+        <input type="radio" name="q1" value="c" onclick="checkAnswer('q1', 'c', this)"> c) Decreased productivity<br>
+        <div class="feedback" id="feedback-q1"></div>
+    </td>
+</tr>
