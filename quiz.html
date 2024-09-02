@@ -6,7 +6,7 @@
     <title>Quiz with Animation</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
     <style>
-        /* Additional styles for feedback */
+        /* Additional styles for feedback and progress bar */
         .feedback {
             display: none;
             font-weight: bold;
@@ -25,6 +25,20 @@
             opacity: 1;
             transform: translateY(0); /* Reset position */
         }
+
+        #progress {
+            height: 20px;
+            background-color: #4CAF50; /* Green */
+            width: 0; /* Start at 0% */
+            transition: width 0.5s; /* Smooth transition */
+        }
+
+        #progress-container {
+            background-color: #e0e0e0; /* Light gray */
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -33,6 +47,9 @@
     </header>
     <main>
         <div id="quiz">
+            <div id="progress-container">
+                <div id="progress"></div>
+            </div>
             <table>
                 <tr>
                     <td>1. What is a common benefit of meditation?</td>
@@ -93,42 +110,6 @@
         </div>
     </main>
 
-    <script>
-        function checkAnswer(question, answer, element) {
-            const feedbackElement = document.getElementById(`feedback-${question}`);
-            feedbackElement.style.display = 'block'; // Show feedback
-
-            // Correct answers: 'b' for Q1, 'a' for Q2, 'b' for Q3, 'b' for Q4, 'e' for Q5
-            const correctAnswers = {
-                q1: 'b',
-                q2: 'a',
-                q3: 'b',
-                q4: 'b',
-                q5: 'e'
-            };
-
-            if (answer === correctAnswers[question]) {
-                feedbackElement.textContent = "Correct!";
-                feedbackElement.className = 'feedback correct';
-            } else {
-                feedbackElement.textContent = "Incorrect. Try again!";
-                feedbackElement.className = 'feedback incorrect';
-            }
-
-            // Animate feedback
-            feedbackElement.style.opacity = '1';
-            feedbackElement.style.transform = 'translateY(0)';
-
-            // Reset the feedback after a few seconds
-            setTimeout(() => {
-                feedbackElement.style.opacity = '0'; // Fade out
-                feedbackElement.style.transform = 'translateY(-10px)'; // Move up
-                setTimeout(() => {
-                    feedbackElement.style.display = 'none'; // Hide after fade out
-                    feedbackElement.className = 'feedback'; // Reset class
-                }, 500); // Wait for the fade out to complete
-            }, 2000);
-        }
-    </script>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
