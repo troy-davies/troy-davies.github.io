@@ -1,3 +1,2 @@
-function bookClicked(bookTitle) {
-    alert("You clicked on: " + bookTitle);
-}
+// Currently, there is no JavaScript functionality needed for this static site.
+// You can add interactivity here in the future if needed.
