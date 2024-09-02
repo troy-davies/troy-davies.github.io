@@ -40,6 +40,7 @@ main {
     border-radius: 0; /* No rounded corners */
     padding: 20px;
     box-shadow: none; /* No shadow */
+    transition: transform 0.3s ease; /* Animation for quiz section */
 }
 
 table {
@@ -66,10 +67,30 @@ button {
     border-radius: 0; /* No rounded corners */
     cursor: pointer;
     font-family: 'Courier New', Courier, monospace; /* Classic font */
+    transition: background-color 0.3s ease; /* Animation for button */
 }
 
 button:hover {
     background-color: #45a049; /* Darker green on hover */
+}
+
+.feedback {
+    display: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation for feedback */
+}
+
+.correct {
+    color: green;
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
+}
+
+.incorrect {
+    color: red;
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
 }
 
 #result {
