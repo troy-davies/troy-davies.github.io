@@ -1,57 +1,134 @@
-<table>
-    <tr>
-        <td>1. What is a common benefit of meditation?</td>
-        <td>
-            <input type="radio" name="q1" value="a" onclick="checkAnswer('q1', 'a', this)"> a) Increased stress<br>
-            <input type="radio" name="q1" value="b" onclick="checkAnswer('q1', 'b', this)"> b) Improved focus<br>
-            <input type="radio" name="q1" value="c" onclick="checkAnswer('q1', 'c', this)"> c) Decreased productivity<br>
-            <input type="radio" name="q1" value="d" onclick="checkAnswer('q1', 'd', this)"> d) Enhanced emotional well-being<br>
-            <input type="radio" name="q1" value="e" onclick="checkAnswer('q1', 'e', this)"> e) Increased anxiety<br>
-            <div class="feedback" id="feedback-q1"></div>
-        </td>
-    </tr>
-    <tr>
-        <td>2. What is a key component of a successful fitness routine?</td>
-        <td>
-            <input type="radio" name="q2" value="a" onclick="checkAnswer('q2', 'a', this)"> a) Consistency<br>
-            <input type="radio" name="q2" value="b" onclick="checkAnswer('q2', 'b', this)"> b) Skipping workouts<br>
-            <input type="radio" name="q2" value="c" onclick="checkAnswer('q2', 'c', this)"> c) Only cardio exercises<br>
-            <input type="radio" name="q2" value="d" onclick="checkAnswer('q2', 'd', this)"> d) Ignoring nutrition<br>
-            <input type="radio" name="q2" value="e" onclick="checkAnswer('q2', 'e', this)"> e) Random exercise selection<br>
-            <div class="feedback" id="feedback-q2"></div>
-        </td>
-    </tr>
-    <tr>
-        <td>3. Which practice can help improve attention span?</td>
-        <td>
-            <input type="radio" name="q3" value="a" onclick="checkAnswer('q3', 'a', this)"> a) Multitasking<br>
-            <input type="radio" name="q3" value="b" onclick="checkAnswer('q3', 'b', this)"> b) Mindfulness exercises<br>
-            <input type="radio" name="q3" value="c" onclick="checkAnswer('q3', 'c', this)"> c) Constant distractions<br>
-            <input type="radio" name="q3" value="d" onclick="checkAnswer('q3', 'd', this)"> d) Procrastination<br>
-            <input type="radio" name="q3" value="e" onclick="checkAnswer('q3', 'e', this)"> e) Excessive screen time<br>
-            <div class="feedback" id="feedback-q3"></div>
-        </td>
-    </tr>
-    <tr>
-        <td>4. What is an important trait for successful entrepreneurs?</td>
-        <td>
-            <input type="radio" name="q4" value="a" onclick="checkAnswer('q4', 'a', this)"> a) Risk aversion<br>
-            <input type="radio" name="q4" value="b" onclick="checkAnswer('q4', 'b', this)"> b) Adaptability<br>
-            <input type="radio" name="q4" value="c" onclick="checkAnswer('q4', 'c', this)"> c) Fear of failure<br>
-            <input type="radio" name="q4" value="d" onclick="checkAnswer('q4', 'd', this)"> d) Inflexibility<br>
-            <input type="radio" name="q4" value="e" onclick="checkAnswer('q4', 'e', this)"> e) Lack of vision<br>
-            <div class="feedback" id="feedback-q4"></div>
-        </td>
-    </tr>
-    <tr>
-        <td>5. What is a common strategy for personal development?</td>
-        <td>
-            <input type="radio" name="q5" value="a" onclick="checkAnswer('q5', 'a', this)"> a) Setting specific goals<br>
-            <input type="radio" name="q5" value="b" onclick="checkAnswer('q5', 'b', this)"> b) Avoiding challenges<br>
-            <input type="radio" name="q5" value="c" onclick="checkAnswer('q5', 'c', this)"> c) Ignoring feedback<br>
-            <input type="radio" name="q5" value="d" onclick="checkAnswer('q5', 'd', this)"> d) Sticking to comfort zones<br>
-            <input type="radio" name="q5" value="e" onclick="checkAnswer('q5', 'e', this)"> e) Embracing lifelong learning<br>
-            <div class="feedback" id="feedback-q5"></div>
-        </td>
-    </tr>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Animation</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
+    <style>
+        /* Additional styles for feedback */
+        .feedback {
+            display: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation for feedback */
+        }
+
+        .correct {
+            color: green;
+            opacity: 1;
+            transform: translateY(0); /* Reset position */
+        }
+
+        .incorrect {
+            color: red;
+            opacity: 1;
+            transform: translateY(0); /* Reset position */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Self-Improvement Quiz</h1>
+    </header>
+    <main>
+        <div id="quiz">
+            <table>
+                <tr>
+                    <td>1. What is a common benefit of meditation?</td>
+                    <td>
+                        <input type="radio" name="q1" value="a" onclick="checkAnswer('q1', 'a', this)"> a) Increased stress<br>
+                        <input type="radio" name="q1" value="b" onclick="checkAnswer('q1', 'b', this)"> b) Improved focus<br>
+                        <input type="radio" name="q1" value="c" onclick="checkAnswer('q1', 'c', this)"> c) Decreased productivity<br>
+                        <input type="radio" name="q1" value="d" onclick="checkAnswer('q1', 'd', this)"> d) Enhanced emotional well-being<br>
+                        <input type="radio" name="q1" value="e" onclick="checkAnswer('q1', 'e', this)"> e) Increased anxiety<br>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2. What is a key component of a successful fitness routine?</td>
+                    <td>
+                        <input type="radio" name="q2" value="a" onclick="checkAnswer('q2', 'a', this)"> a) Consistency<br>
+                        <input type="radio" name="q2" value="b" onclick="checkAnswer('q2', 'b', this)"> b) Skipping workouts<br>
+                        <input type="radio" name="q2" value="c" onclick="checkAnswer('q2', 'c', this)"> c) Only cardio exercises<br>
+                        <input type="radio" name="q2" value="d" onclick="checkAnswer('q2', 'd', this)"> d) Ignoring nutrition<br>
+                        <input type="radio" name="q2" value="e" onclick="checkAnswer('q2', 'e', this)"> e) Random exercise selection<br>
+                        <div class="feedback" id="feedback-q2"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3. Which practice can help improve attention span?</td>
+                    <td>
+                        <input type="radio" name="q3" value="a" onclick="checkAnswer('q3', 'a', this)"> a) Multitasking<br>
+                        <input type="radio" name="q3" value="b" onclick="checkAnswer('q3', 'b', this)"> b) Mindfulness exercises<br>
+                        <input type="radio" name="q3" value="c" onclick="checkAnswer('q3', 'c', this)"> c) Constant distractions<br>
+                        <input type="radio" name="q3" value="d" onclick="checkAnswer('q3', 'd', this)"> d) Procrastination<br>
+                        <input type="radio" name="q3" value="e" onclick="checkAnswer('q3', 'e', this)"> e) Excessive screen time<br>
+                        <div class="feedback" id="feedback-q3"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4. What is an important trait for successful entrepreneurs?</td>
+                    <td>
+                        <input type="radio" name="q4" value="a" onclick="checkAnswer('q4', 'a', this)"> a) Risk aversion<br>
+                        <input type="radio" name="q4" value="b" onclick="checkAnswer('q4', 'b', this)"> b) Adaptability<br>
+                        <input type="radio" name="q4" value="c" onclick="checkAnswer('q4', 'c', this)"> c) Fear of failure<br>
+                        <input type="radio" name="q4" value="d" onclick="checkAnswer('q4', 'd', this)"> d) Inflexibility<br>
+                        <input type="radio" name="q4" value="e" onclick="checkAnswer('q4', 'e', this)"> e) Lack of vision<br>
+                        <div class="feedback" id="feedback-q4"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5. What is a common strategy for personal development?</td>
+                    <td>
+                        <input type="radio" name="q5" value="a" onclick="checkAnswer('q5', 'a', this)"> a) Setting specific goals<br>
+                        <input type="radio" name="q5" value="b" onclick="checkAnswer('q5', 'b', this)"> b) Avoiding challenges<br>
+                        <input type="radio" name="q5" value="c" onclick="checkAnswer('q5', 'c', this)"> c) Ignoring feedback<br>
+                        <input type="radio" name="q5" value="d" onclick="checkAnswer('q5', 'd', this)"> d) Sticking to comfort zones<br>
+                        <input type="radio" name="q5" value="e" onclick="checkAnswer('q5', 'e', this)"> e) Embracing lifelong learning<br>
+                        <div class="feedback" id="feedback-q5"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        function checkAnswer(question, answer, element) {
+            const feedbackElement = document.getElementById(`feedback-${question}`);
+            feedbackElement.style.display = 'block'; // Show feedback
+
+            // Correct answers: 'b' for Q1, 'a' for Q2, 'b' for Q3, 'b' for Q4, 'e' for Q5
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'b',
+                q4: 'b',
+                q5: 'e'
+            };
+
+            if (answer === correctAnswers[question]) {
+                feedbackElement.textContent = "Correct!";
+                feedbackElement.className = 'feedback correct';
+            } else {
+                feedbackElement.textContent = "Incorrect. Try again!";
+                feedbackElement.className = 'feedback incorrect';
+            }
+
+            // Animate feedback
+            feedbackElement.style.opacity = '1';
+            feedbackElement.style.transform = 'translateY(0)';
+
+            // Reset the feedback after a few seconds
+            setTimeout(() => {
+                feedbackElement.style.opacity = '0'; // Fade out
+                feedbackElement.style.transform = 'translateY(-10px)'; // Move up
+                setTimeout(() => {
+                    feedbackElement.style.display = 'none'; // Hide after fade out
+                    feedbackElement.className = 'feedback'; // Reset class
+                }, 500); // Wait for the fade out to complete
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
