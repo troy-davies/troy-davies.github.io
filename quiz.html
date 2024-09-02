@@ -23,36 +23,52 @@
         <section id="quiz">
             <h2>Test Your Knowledge</h2>
             <form id="quizForm">
-                <div>
-                    <label>1. What is a common benefit of meditation?</label><br>
-                    <input type="radio" name="q1" value="a"> a) Increased stress<br>
-                    <input type="radio" name="q1" value="b"> b) Improved focus<br>
-                    <input type="radio" name="q1" value="c"> c) Decreased productivity<br>
-                </div>
-                <div>
-                    <label>2. Which of the following is a key component of fitness?</label><br>
-                    <input type="radio" name="q2" value="a"> a) Flexibility<br>
-                    <input type="radio" name="q2" value="b"> b) Ignoring nutrition<br>
-                    <input type="radio" name="q2" value="c"> c) Sedentary lifestyle<br>
-                </div>
-                <div>
-                    <label>3. What is a good way to improve attention span?</label><br>
-                    <input type="radio" name="q3" value="a"> a) Multitasking<br>
-                    <input type="radio" name="q3" value="b"> b) Regular breaks<br>
-                    <input type="radio" name="q3" value="c"> c) Constant distractions<br>
-                </div>
-                <div>
-                    <label>4. Which of the following is important for financial growth?</label><br>
-                    <input type="radio" name="q4" value="a"> a) Saving money<br>
-                    <input type="radio" name="q4" value="b"> b) Spending recklessly<br>
-                    <input type="radio" name="q4" value="c"> c) Ignoring investments<br>
-                </div>
-                <div>
-                    <label>5. What is a common practice for self-improvement?</label><br>
-                    <input type="radio" name="q5" value="a"> a) Setting goals<br>
-                    <input type="radio" name="q5" value="b"> b) Avoiding challenges<br>
-                    <input type="radio" name="q5" value="c"> c) Procrastination<br>
-                </div>
+                <table>
+                    <tr>
+                        <th>Question</th>
+                        <th>Options</th>
+                    </tr>
+                    <tr>
+                        <td>1. What is a common benefit of meditation?</td>
+                        <td>
+                            <input type="radio" name="q1" value="a"> a) Increased stress<br>
+                            <input type="radio" name="q1" value="b"> b) Improved focus<br>
+                            <input type="radio" name="q1" value="c"> c) Decreased productivity<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. Which of the following is a key component of fitness?</td>
+                        <td>
+                            <input type="radio" name="q2" value="a"> a) Flexibility<br>
+                            <input type="radio" name="q2" value="b"> b) Ignoring nutrition<br>
+                            <input type="radio" name="q2" value="c"> c) Sedentary lifestyle<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. What is a good way to improve attention span?</td>
+                        <td>
+                            <input type="radio" name="q3" value="a"> a) Multitasking<br>
+                            <input type="radio" name="q3" value="b"> b) Regular breaks<br>
+                            <input type="radio" name="q3" value="c"> c) Constant distractions<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4. Which of the following is important for financial growth?</td>
+                        <td>
+                            <input type="radio" name="q4" value="a"> a) Saving money<br>
+                            <input type="radio" name="q4" value="b"> b) Spending recklessly<br>
+                            <input type="radio" name="q4" value="c"> c) Ignoring investments<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. What is a common practice for self-improvement?</td>
+                        <td>
+                            <input type="radio" name="q5" value="a"> a) Setting goals<br>
+                            <input type="radio" name="q5" value="b"> b) Avoiding challenges<br>
+                            <input type="radio" name="q5" value="c"> c) Procrastination<br>
+                        </td>
+                    </tr>
+                </table>
                 <button type="button" onclick="submitQuiz()">Submit</button>
             </form>
             <div id="result"></div>
