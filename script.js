@@ -1,50 +1,74 @@
-const messages = [
-    "Welcome to the chaos!",
-    "Did you know? Randomness is key!",
-    "Embrace the chaos!",
-    "Life is unpredictable!",
-    "Why so serious? Let's have fun!",
-    "Did you find the hidden message?",
-    "Keep scrolling for surprises!",
-    "Randomness is the spice of life!",
-    "You are awesome!",
-    "Chaos is a ladder!"
-];
+const colors = ['Red', 'Green', 'Blue', 'Yellow'];
+const values = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Skip', 'Reverse', 'Draw Two'];
+let deck = [];
+let playerHand = [];
+let currentCard = null;
 
-document.getElementById('random-message').addEventListener('click', function() {
-    const randomIndex = Math.floor(Math.random() * messages.length);
-    alert(messages[randomIndex]);
-});
+// Create a deck of UNO cards
+function createDeck() {
+    for (let color of colors) {
+        for (let value of values) {
+            deck.push({ color, value });
+            if (value !== '0') { // Add a second copy for 1-9
+                deck.push({ color, value });
+            }
+        }
+    }
+    shuffleDeck();
+}
 
-document.getElementById('random-scroll').addEventListener('click', function() {
-    const randomScroll = Math.floor(Math.random() * document.body.scrollHeight);
-    window.scrollTo(0, randomScroll);
-});
+// Shuffle the deck
+function shuffleDeck() {
+    for (let i = deck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+}
 
-// Change background color/gradient every few seconds
-setInterval(() => {
-    document.body.classList.toggle('random-bg');
-}, 5000);
+// Draw a card from the deck
+function drawCard() {
+    if (deck.length > 0) {
+        const card = deck.pop();
+        playerHand.push(card);
+        displayPlayerHand();
+        updateMessage(`You drew a ${card.color} ${card.value}`);
+    } else {
+        updateMessage("No more cards in the deck!");
+    }
+}
 
-// Randomly redirect to subpages every 10 seconds
-setInterval(() => {
-    const pages = ['index.html', 'about.html', 'services.html', 'contact.html'];
-    const randomPage = pages[Math.floor(Math.random() * pages.length)];
-    window.location.href = randomPage;
-}, 10000);
-
-// Randomly invert colors every 8 seconds
-setInterval(() => {
-    document.body.classList.toggle('inverted');
-}, 8000);
-
-// Randomly change UI elements every 3 seconds
-setInterval(() => {
-    const elements = document.querySelectorAll('h1, h2, p, button');
-    elements.forEach(element => {
-        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-        element.style.color = randomColor;
-        element.style.fontSize = Math.random() * (30 - 10) + 10 + 'px';
-        element.style.transform = `rotate(${Math.random() * 360}deg)`;
+// Display player's hand
+function displayPlayerHand() {
+    const handDiv = document.getElementById('player-hand');
+    handDiv.innerHTML = '';
+    playerHand.forEach(card => {
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card';
+        cardDiv.textContent = `${card.color} ${card.value}`;
+        handDiv.appendChild(cardDiv);
     });
-}, 3000);
+}
+
+// Update message
+function updateMessage(msg) {
+    document.getElementById('message').textContent = msg;
+}
+
+// Play a card (basic functionality)
+function playCard() {
+    if (playerHand.length > 0) {
+        const card = playerHand.pop();
+        currentCard = card;
+        updateMessage(`You played a ${card.color} ${card.value}`);
+        displayPlayerHand();
+    } else {
+        updateMessage("No cards to play!");
+    }
+}
+
+// Event listeners
+document.getElementById('draw-card').addEventListener('click', drawCard);
+document.getElementById('play-card').addEventListener('click', playCard);
+
+// Initialize the game
+createDeck();
