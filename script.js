@@ -1,66 +1,17 @@
-let score = 0;
-let totalQuestions = 5;
-let currentQuestion = 0;
-let answeredQuestions = {}; // Track answered questions
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('light');
+});
 
-function checkAnswer(question, answer, element) {
-    // Check if the question has already been answered
-    if (answeredQuestions[question]) {
-        return; // If answered, do nothing
-    }
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-    const feedbackElement = document.getElementById(`feedback-${question}`);
-    feedbackElement.style.display = 'block'; // Show feedback
+    alert(`Thank you, ${name}! Your message has been sent.`);
+    this.reset();
+});
 
-    // Correct answers
-    const correctAnswers = {
-        q1: 'b',
-        q2: 'a',
-        q3: 'b',
-        q4: 'b',
-        q5: 'e'
-    };
-
-    if (answer === correctAnswers[question]) {
-        feedbackElement.textContent = "Correct!";
-        feedbackElement.className = 'feedback correct';
-        score++;
-    } else {
-        feedbackElement.textContent = "Incorrect. Try again!";
-        feedbackElement.className = 'feedback incorrect';
-    }
-
-    // Mark the question as answered
-    answeredQuestions[question] = true;
-
-    // Update progress bar
-    currentQuestion++;
-    updateProgress();
-
-    // Animate feedback
-    feedbackElement.style.opacity = '1';
-    feedbackElement.style.transform = 'translateY(0)';
-
-    // Reset the feedback after a few seconds
-    setTimeout(() => {
-        feedbackElement.style.opacity = '0'; // Fade out
-        feedbackElement.style.transform = 'translateY(-10px)'; // Move up
-        setTimeout(() => {
-            feedbackElement.style.display = 'none'; // Hide after fade out
-            feedbackElement.className = 'feedback'; // Reset class
-        }, 500); // Wait for the fade out to complete
-    }, 2000);
-
-    // Show final score if all questions are answered
-    if (currentQuestion === totalQuestions) {
-        setTimeout(() => {
-            alert(`Quiz completed! Your score: ${score} out of ${totalQuestions}`);
-        }, 2500);
-    }
-}
-
-function updateProgress() {
-    const progressBar = document.getElementById('progress');
-    const percentage = (currentQuestion / totalQuestions) * 100;
-    progressBar.style.width = percentage + '%';
+function showServiceDetails(service) {
+    alert(`Details about ${service}`);
 }
