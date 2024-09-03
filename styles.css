@@ -1,67 +1,41 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: background-color 1s, color 1s;
-}
-
-header {
-    background: #333;
-    color: white;
-    padding: 10px 20px;
+    background-color: #f0f0f0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.game-container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+.card {
+    width: 100px;
+    height: 140px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
+.hand {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 button {
-    background: #ff5722;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #e64a19;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: white;
-}
-
-/* Random background styles */
-body.random-bg {
-    background: linear-gradient(45deg, #ff6f00, #ffeb3b, #00bcd4, #8e24aa);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Inverted colors */
-body.inverted {
-    filter: invert(1);
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
