@@ -96,8 +96,9 @@
         const zNear = 0.1;
         const zFar = 100.0;
 
+        gl.viewport(0, 0, canvas.width, canvas.height);
+
         const projectionMatrix = gl.mat4.create();
         gl.mat4.perspective(projectionMatrix, fieldOfView, aspect, zNear, zFar);
 
-        const modelViewMatrix = gl.mat4.create();
-        gl.mat
+       
