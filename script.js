@@ -32,3 +32,19 @@ setInterval(() => {
     const randomPage = pages[Math.floor(Math.random() * pages.length)];
     window.location.href = randomPage;
 }, 10000);
+
+// Randomly invert colors every 8 seconds
+setInterval(() => {
+    document.body.classList.toggle('inverted');
+}, 8000);
+
+// Randomly change UI elements every 3 seconds
+setInterval(() => {
+    const elements = document.querySelectorAll('h1, h2, p, button');
+    elements.forEach(element => {
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        element.style.color = randomColor;
+        element.style.fontSize = Math.random() * (30 - 10) + 10 + 'px';
+        element.style.transform = `rotate(${Math.random() * 360}deg)`;
+    });
+}, 3000);
