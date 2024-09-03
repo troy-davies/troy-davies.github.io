@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGL Example</title>
+    <title>Impressive Static Website</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
+            transition: background-color 0.1s ease-in-out;
         }
 
         #canvas {
@@ -74,10 +75,4 @@
             -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0, 1.0, -1.0
         ];
 
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
-
-        const colorBuffer = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-
-        const colors = [
-            1.0, 0.0, 0.0, 1.0,
+        gl.bufferData(gl.ARRAY_
