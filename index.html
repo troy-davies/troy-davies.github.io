@@ -3,28 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>WebGL Example</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #canvas {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Games Hub!</h1>
-        <nav>
-            <ul>
-                <li><a href="chess.html">Chess</a></li>
-                <li><a href="checkers.html">Checkers</a></li>
-                <li><a href="uno.html">Uno</a></li>
-                <li><a href="toptrumps.html">Top Trumps</a></li>
-                <li><a href="gofish.html">Go Fish</a></li>
-                <li><a href="monopoly.html">Monopoly</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Select a Game to Play!</h2>
-    </main>
-    <footer>
-        <p>&copy; 2023 Games Hub. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const gl = canvas.getContext('webgl');
+
+        if (!gl) {
+            console.error('WebGL is not supported');
+            return;
+        }
+
+        const vertexShaderSource = `
+            attribute vec4 aVertexPosition;
+            attribute vec4 aVertexColor;
+
+            uniform mat4 uModelViewMatrix;
+            uniform mat4 uProjectionMatrix;
+
+            varying lowp vec4 vColor;
+
+            void main() {
+                gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
+                vColor = aVertexColor;
+            }
+        `;
+
+        const fragmentShaderSource = `
+            varying lowp vec4 vColor;
+
+            void main() {
+                gl_FragColor = vColor;
+            }
+        `;
+
+        const vertexShader = gl.createShader(gl.VERTEX_SHADER);
+        gl.shaderSource(vertexShader, vertexShaderSource);
+        gl.compileShader(vertexShader);
+
+        const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+        gl.shaderSource(fragmentShader, fragmentShaderSource);
+        gl.compileShader(fragmentShader);
+
+        const program = gl.createProgram();
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+        gl.linkProgram(program);
+
+        const positionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+
+        const positions = [
+            -1.0, -1.0, 0.0, 1.0, -1.0, 0.0, 0.0, 1.0, 0.0,
+        ];
+
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+
+        const colorBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+
+        const colors = [
+            1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0,
+        ];
+
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+
+        const vertexPositionAttribute = gl.getAttribLocation(program, 'aVertexPosition');
+        gl.enableVertexAttribArray(vertexPositionAttribute);
+        gl.vertexAttribPointer(vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+
+        const vertexColorAttribute = gl.getAttribLocation(program, 'aVertexColor');
+        gl.enableVertexAttribArray(vertexColorAttribute);
+        gl.vertexAttribPointer(vertexColorAttribute, 3, gl.FLOAT, false, 0, 0);
+
+        const modelViewMatrix = gl.getUniformLocation(program, 'uModelViewMatrix');
+        const projectionMatrix = gl.getUniformLocation(program, 'uProjectionMatrix');
+
+        const fieldOfView = 45 * Math.PI / 180;
+        const aspect = canvas.clientWidth / canvas.clientHeight;
+        const zNear = 0.1;
+        const zFar = 100.0;
+
+        const projectionMatrix = gl.mat4.create();
+        gl.mat4.perspective(projectionMatrix, fieldOfView, aspect, zNear, zFar);
+
+        const modelViewMatrix = gl.mat4.create();
+        gl.mat
