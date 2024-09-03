@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 1s, color 1s;
 }
 
 header {
@@ -29,16 +29,16 @@ nav ul li a {
     text-decoration: none;
 }
 
-.service-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
+button {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
     cursor: pointer;
-    transition: transform 0.3s;
 }
 
-.service-card:hover {
-    transform: scale(1.05);
+button:hover {
+    background: #e64a19;
 }
 
 footer {
@@ -48,17 +48,15 @@ footer {
     color: white;
 }
 
-/* Theme styles */
-body.light {
-    background-color: #f4f4f4;
-    color: #333;
+/* Random background styles */
+body.random-bg {
+    background: linear-gradient(45deg, #ff6f00, #ffeb3b, #00bcd4, #8e24aa);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
-body.light header, body.light footer {
-    background: #fff;
-    color: #333;
-}
-
-body.light .service-card {
-    border-color: #333;
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
