@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkers - Games Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
+            gap: 0;
+        }
+        .square {
+            width: 50px;
+            height: 50px;
+        }
+        .black {
+            background-color: #333;
+        }
+        .white {
+            background-color: #fff;
+        }
+        .piece {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .red {
+            background-color: red;
+        }
+        .black-piece {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Checkers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chess.html">Chess</a></li>
+                <li><a href="uno.html">Uno</a></li>
+                <li><a href="top-trumps.html">Top Trumps</a></li>
+                <li><a href="gofish.html">Go Fish</a></li>
+                <li><a href="monopoly.html">Monopoly</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Checkers Game</h2>
+        <div class="board" id="board"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Games Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const boardElement = document.getElementById('board');
+        const board = [];
+
+        // Initialize the board
+        for (let row = 0; row < 8; row++) {
+            const rowArray = [];
+            for (let col = 0; col < 8; col++) {
+                const square = document.createElement('div');
+                square.classList.add('square', (row + col) % 2 === 0 ? 'white' : 'black');
+                boardElement.appendChild(square);
+                rowArray.push(square);
+
+                // Add pieces to the board
+                if (row < 3 && (row + col) % 2 === 1) {
+                    const piece = document.createElement('div');
+                    piece.classList.add('piece', 'red');
+                    square.appendChild(piece);
+                } else if (row > 4 && (row + col) % 2 === 1) {
+                    const piece = document.createElement('div');
+                    piece.classList.add('piece', 'black-piece');
+                    square.appendChild(piece);
+                }
+            }
+            board.push(rowArray);
+        }
+    </script>
+</body>
+</html>
