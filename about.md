@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
+![Me](_site/assets/images/me.jpeg)
 
 Hi I'm Troy, this is my website. This website is where I express my opinions and give you useful imformation.
 
