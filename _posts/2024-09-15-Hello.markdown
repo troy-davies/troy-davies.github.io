@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "My First Post"
-date: 2023-10-01
+title: "Hello"
+date: 2024-09-15
 categories: [category1, category2]
 ---
 Hi, I'm Troy and this is my webpage. I hope you like it. I spend alot of time maintaining it and building it. It is hosted on github pages so I thought using the Jekyll website maker would be a good fit. Special thanks to freedns.afraid.org for my dns provider, making the website adress what it is instead od "troy-davies.github.io" which still works but just redirects you to "troyport.moo.com"
