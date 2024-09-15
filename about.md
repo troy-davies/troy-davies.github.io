@@ -4,15 +4,12 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hi I'm Troy, this is my website. This website is where I express my opinions and give you useful imformation.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I enjoy sports and learning. I try to balance them though.
+This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at 
+Honarable thanks to Jekyll and FreeDNS for helping my make this webpage.
+(https://jekyllrb.com/)
+(https://freedns.afraid.org/)
 
 
-[jekyll-organization]: https://github.com/jekyll
