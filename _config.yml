@@ -24,7 +24,7 @@ github_username:  troy-davies
 
 # Build settings
 markdown: kramdown
-theme:
+theme: minima
 plugins:
   - jekyll-feed
 
