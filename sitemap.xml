@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://troyport.mooo.com/posts/first-post/</loc>
+    <lastmod>2026-08-19T11:55:52+01:00</lastmod>
+  </url><url>
+    <loc>http://troyport.mooo.com/</loc>
+    <lastmod>2026-08-19T11:55:52+01:00</lastmod>
+  </url><url>
+    <loc>http://troyport.mooo.com/posts/</loc>
+    <lastmod>2026-08-19T11:55:52+01:00</lastmod>
+  </url><url>
+    <loc>http://troyport.mooo.com/categories/</loc>
+  </url><url>
+    <loc>http://troyport.mooo.com/tags/</loc>
+  </url>
+</urlset>
